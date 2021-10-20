@@ -1,0 +1,38 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+span {
+  margin-bottom: 16px;
+}
+
+.greetings {
+  font-size: 30px;
+}
+
+.start {
+  font-size: 26px;
+}
+
+.task {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.wrap-text {
+  white-space: pre;
+}
+.margin-left {
+  margin-left: 10px;
+}
