@@ -36,3 +36,22 @@ span {
 .margin-left {
   margin-left: 10px;
 }
+
+.bottom-align {
+  position: absolute;
+  bottom: 100px;
+}
+
+.custom-button {
+  border-radius: 20px;
+  padding: 16px;
+  font-size: 14px;
+  background-color: honeydew;
+  border: none;
+}
+
+.custom-input {
+  font-size: 14px;
+  padding: 10px 16px;
+  border: none;
+}

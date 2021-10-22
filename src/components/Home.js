@@ -14,12 +14,11 @@ export const Home = () => {
      setIsTrue(true);
    }
   }
-
   useEffect(() => {
     if (isTrue) {
-      setTimeout(() => history.push('/goeat'), 3000);
+      setTimeout(() => history.push(`/goeat/${name}/${category}`), 3000);
     }
-  }, [isTrue, history]);
+  }, [isTrue, history, name, category]);
   return (
     <div className="main">
       <span className="greetings">Салам, {toUpper(name)}</span>
