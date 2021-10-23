@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
 import './home.css';
 
 export const Web = () => {
+  const history = useHistory();
   const { name, category } = useParams();
   const [answer, setAnswer] = useState('');
   const [takenCat, setTakenCat] = useState();
@@ -139,6 +140,10 @@ export const Web = () => {
 
   const toUpper = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
+  const onClick = useCallback(() => {
+    history.push('/test/user');
+  }, [history]);
+
   useEffect(() => {
     const cat = finalText.find((item) => item.name === category);
     setTakenCat(cat ? cat.text.find(item => item.to === name) : undefined);
@@ -152,7 +157,19 @@ export const Web = () => {
       </span>
       <input className="custom-input" onChange={(a, b) => onTextChange(a, b)}/>
       <br></br>
-      {isTrue && <span className="task green">Все верно, молодец {toUpper(name)}!</span>}
+      {isTrue && (
+        <>
+          <span className="task green">Все верно, молодец {toUpper(name)}!</span>
+          <div className="bottom-align">
+            <button 
+              className="custom-button"
+              onClick={onClick}
+            >
+              Пошли дальше
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import {
 import { Home } from './components/Home';
 import { GoEat } from './components/GoEat';
 import { Web } from './components/Web';
+import { Test } from './components/Test';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/web/:name/:category">
           <Web />
+        </Route>
+        <Route path="/test/:type">
+          <Test />
         </Route>
       </Switch>
     </Router>
